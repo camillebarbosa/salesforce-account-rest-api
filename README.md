@@ -1,18 +1,41 @@
-# Salesforce DX Project: Next Steps
+# Salesforce Customer Account Validation API
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+A custom Apex REST API built in Salesforce to validate customer identity and securely expose account information to external systems.
 
-## How Do You Plan to Deploy Your Changes?
+## Features
+- Apex REST API
+- OAuth 2.0 Authentication
+- CPF Validation
+- Structured JSON Responses
+- HTTP Status Code Handling
+- Salesforce Integration Architecture
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Technologies
+- Salesforce Apex
+- SOQL
+- OAuth 2.0
+- Postman
+- VS Code + SFDX
 
-## Configure Your Salesforce DX Project
+## Endpoint
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+GET /services/apexrest/Account/{accountNumber}
 
-## Read All About It
+## Status Codes
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+| Code | Meaning |
+|---|---|
+| 200 | Success |
+| 400 | Missing CPF Header |
+| 401 | Unauthorized |
+| 404 | Account Not Found |
+
+## Example Response
+
+
+json
+{
+  \"success\": true,
+  \"message\": \"User authenticated successfully\",
+  \"statusCode\": 200
+}
