@@ -90,13 +90,12 @@ OAuth 2.0
 
 OAuth Flow
 
-Password Grant Type
+Client Credentials Grant Type
 
 Required Credentials
 Consumer Key
 Consumer Secret
-Salesforce Username
-Password + Security Token
+
 8. API Technical Specification
 Endpoint
 GET /services/apexrest/Account/{accountNumber}
